@@ -1265,7 +1265,7 @@ uint8* CVif::CFifoStream::GetDirectPointer() const
 	else
 	{
 		assert((m_nextAddress - m_startAddress) >= 0x10);
-		return m_source + m_nextAddress + m_bufferPosition - 0x10;
+		return m_source + m_nextAddress - 0x10;
 	}
 }
 
