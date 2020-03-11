@@ -41,6 +41,8 @@ enum
 	MIPS_EXCEPTION_RETURNFROMEXCEPTION,
 	MIPS_EXCEPTION_CALLMS,
 	MIPS_EXCEPTION_BREAKPOINT,
+	MIPS_EXCEPTION_TLB_READ,
+	MIPS_EXCEPTION_TLB_WRITE
 };
 
 #define MIPS_EXECUTION_STATUS_QUOTADONE 0x80
@@ -146,6 +148,7 @@ public:
 
 	void* m_vuMem = nullptr;
 	void** m_pageLookup = nullptr;
+	static void HandleTLBWrite(CMIPS*);
 
 	std::function<void(CMIPS*)> m_emptyBlockHandler;
 
